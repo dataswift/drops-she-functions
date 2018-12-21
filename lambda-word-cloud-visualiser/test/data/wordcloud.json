@@ -1,0 +1,127 @@
+{
+  "id": "word-cloud",
+  "name": "wordCount",
+  "description": "This function generates a word cloud data",
+  "counts": [
+    {
+      "keyWord": "https",
+      "count": 44
+    },
+    {
+      "keyWord": "co",
+      "count": 40
+    },
+    {
+      "keyWord": "data",
+      "count": 18
+    },
+    {
+      "keyWord": "yangrunenberger",
+      "count": 14
+    },
+    {
+      "keyWord": "ireneclng",
+      "count": 12
+    },
+    {
+      "keyWord": "great",
+      "count": 10
+    },
+    {
+      "keyWord": "hubofallthings",
+      "count": 10
+    },
+    {
+      "keyWord": "singapore",
+      "count": 8
+    },
+    {
+      "keyWord": "rt",
+      "count": 7
+    },
+    {
+      "keyWord": "gdpr",
+      "count": 6
+    },
+    {
+      "keyWord": "madhatters",
+      "count": 6
+    },
+    {
+      "keyWord": "collect",
+      "count": 4
+    },
+    {
+      "keyWord": "especially",
+      "count": 4
+    },
+    {
+      "keyWord": "privacy",
+      "count": 4
+    },
+    {
+      "keyWord": "little",
+      "count": 4
+    },
+    {
+      "keyWord": "news",
+      "count": 4
+    },
+    {
+      "keyWord": "fight",
+      "count": 4
+    },
+    {
+      "keyWord": "always",
+      "count": 4
+    },
+    {
+      "keyWord": "driver",
+      "count": 4
+    },
+    {
+      "keyWord": "good",
+      "count": 4
+    },
+    {
+      "keyWord": "economy",
+      "count": 4
+    },
+    {
+      "keyWord": "doesn't",
+      "count": 4
+    },
+    {
+      "keyWord": "make",
+      "count": 4
+    },
+    {
+      "keyWord": "face",
+      "count": 4
+    },
+    {
+      "keyWord": "time",
+      "count": 4
+    },
+    {
+      "keyWord": "telcos",
+      "count": 4
+    },
+    {
+      "keyWord": "much",
+      "count": 4
+    },
+    {
+      "keyWord": "go",
+      "count": 4
+    },
+    {
+      "keyWord": "personal",
+      "count": 3
+    }
+  ],
+  "summary": {
+    "postsAnalysed": 1000,
+    "totalCount": 246
+  }
+}

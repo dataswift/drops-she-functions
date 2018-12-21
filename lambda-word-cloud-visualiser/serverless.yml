@@ -13,6 +13,21 @@
 
 service: word-cloud-visualiser # NOTE: update this with your service name
 
+plugins:
+  - serverless-python-requirements
+  - serverless-apigw-binary
+  - serverless-apigwy-binary
+
+custom:
+  awsAccountId:
+    Ref: AWS::AccountId
+  pythonRequirements:
+    dockerizePip: non-linux
+  apigwBinary:
+    types:
+      - 'image/png'
+      - '*/*'
+
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
 # frameworkVersion: "=X.X.X"
@@ -20,6 +35,19 @@ service: word-cloud-visualiser # NOTE: update this with your service name
 provider:
   name: aws
   runtime: python3.7
+  region: eu-west-1
+  stage: dev
+  memorySize: 256
+  versionFunctions: false
+  timeout: 10
+  logRetentionInDays: 1
+  endpointType: regional
+  vpc:
+    securityGroupIds:
+      - sg-237cde5a
+    subnetIds:
+      - subnet-006905369927e2240
+      - subnet-0d535a2f4a04a81ce
 
 # you can overwrite defaults here
 #  stage: dev
@@ -53,10 +81,21 @@ provider:
 #  exclude:
 #    - exclude-me.py
 #    - exclude-me-dir/**
+package:
+  exclude:
+    - test/**
+    - venv/**
+    - node_modules/**
 
 functions:
-  hello:
-    handler: handler.hello
+  word-cloud-visualiser:
+    handler: word-cloud-visualiser.visualise
+    events:
+      - http:
+          path: word-cloud-visualiser/1.0.0
+          method: post
+          contentHandling: CONVERT_TO_BINARY
+
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events
