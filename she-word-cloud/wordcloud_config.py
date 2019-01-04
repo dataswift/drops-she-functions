@@ -24,7 +24,7 @@ def lambda_handler(event, context):
                     "normal": ""
                 },
                 "logo": {
-                    "normal": ""
+                    "normal": "https://github.com/Hub-of-all-Things/exchange-assets/blob/master/wordcloud/logo.png?raw=true"
                 },
                 "screenshots": [
                     {
