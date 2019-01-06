@@ -85,7 +85,7 @@ package:
     - node_modules/**
 
 functions:
-  twitter-word-cloud-config:
+  twitter-word-cloud-configuration:
     handler: wordcloud_config.lambda_handler
     events:
       - http:
@@ -99,7 +99,7 @@ functions:
           path: twitter-word-cloud/1.0.0
           method: post
 
-  twitter-word-cloud-data-bundle:
+  twitter-word-cloud-bundle:
     handler: wordcloud_data_bundle.lambda_handler
     events:
       - http:

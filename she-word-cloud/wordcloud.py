@@ -4,7 +4,7 @@
 # Ming-Wei Hsu
 #
 
-import json
+import datetime
 import re
 from collections import Counter
 
@@ -12,12 +12,11 @@ def lambda_handler(event, context):
     # TODO implement
     text = ''
     #return event[1]['data']['tweets']['text'] 
-    
-    for row in event:
+
+    tweets = event['request']['data']['twitter/tweets']
+    for row in tweets:
         if 'data' in row:
-            if 'tweets' in row['data']:
-                if 'text' in row['data']['tweets']:
-                    text += row['data']['tweets']['text']    
+            text += row['data']['message']
     
     words = re.findall(r"\w[\w']+", text, 0)
     
@@ -38,35 +37,42 @@ def lambda_handler(event, context):
     word_counts = Counter(words).most_common(len(words))
     
     result = {
-        "id": "abcde",
-        "name": "wordCount",
-        "description": "This function generates a word cloud data",
+        "id": "twitter-word-cloud",
+        "name": "Twitter Word Cloud",
+        "description": "This function generates a word cloud data from your twitter tweets.",
         "counts": [],
         "summary": {
             "postsAnalysed": 0,
             "totalCount": 0
-        }
+        },
+        "timestamp": datetime.datetime.utcnow().isoformat()
     }
     
-    count_criteria = 3; 
+    count_criteria = 3
     count = 0
     for w in word_counts:
         if w[1] >= count_criteria:
             result['counts'].append({"keyWord": w[0], "count": w[1]}) 
             count += w[1] 
     
-    result['summary']['postsAnalysed'] = len(event) 
+    result['summary']['postsAnalysed'] = len(tweets)
     result['summary']['totalCount'] = count
     
-    return {
-        "isBase64Encoded": False,
-        "statusCode": 200,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "body": json.dumps(result)
-    }
-    
+    #return {
+    #    "isBase64Encoded": False,
+    #    "statusCode": 200,
+    #    "headers": {
+    #        "Content-Type": "application/json"
+    #    },
+    #    "body": json.dumps(result)
+    #}
+
+    return [{
+        "namespace": "she",
+        "endpoint": "insights/twitter/word-cloud",
+        "data": [result],
+        "linkedRecords": []
+    }]
     #return word_counts
     
     #return len(event)

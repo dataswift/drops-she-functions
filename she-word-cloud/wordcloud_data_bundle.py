@@ -10,21 +10,24 @@ def lambda_handler(event, context):
                     {
                         "endpoint": "twitter/tweets",
                         "mapping": {
-                            "id": "id_str"
+                            "message": "text",
+                            "timestamp": "lastUpdated"
                         }
                     }
                 ],
                 "orderBy": "lastUpdated",
-                "ordering": "descending"
+                "ordering": "descending",
+                "limit": 100
             }
         }
     }
 
-    return {
-        "isBase64Encoded": False,
-        "statusCode": 200,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "body": json.dumps(bundle)
-    }
+    return bundle
+    #return {
+    #    "isBase64Encoded": False,
+    #    "statusCode": 200,
+    #    "headers": {
+    #        "Content-Type": "application/json"
+    #    },
+    #    "body": json.dumps(bundle)
+    #}

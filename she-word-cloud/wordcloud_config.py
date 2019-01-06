@@ -44,7 +44,8 @@ def lambda_handler(event, context):
             "country": "United Kingdom"
         },
         "trigger": {
-            "triggerType": "individual"
+            "period": "P1W",
+            "triggerType": "periodic"
         },
         "dataBundle": {
             "name": "twitter-word-cloud",
@@ -54,12 +55,14 @@ def lambda_handler(event, context):
                         {
                             "endpoint": "twitter/tweets",
                             "mapping": {
-                                "id": "id_str"
+                                "message": "text",
+                                "timestamp": "lastUpdated"
                             }
                         }
                     ],
                     "orderBy": "lastUpdated",
-                    "ordering": "descending"
+                    "ordering": "descending",
+                    "limit": 100
                 }
             }
         },
@@ -69,11 +72,13 @@ def lambda_handler(event, context):
         }
     }
 
-    return {
-        "isBase64Encoded": False,
-        "statusCode": 200,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "body": json.dumps(config)
-    }
+    return config
+
+    #return {
+    #    "isBase64Encoded": False,
+    #    "statusCode": 200,
+    #    "headers": {
+    #        "Content-Type": "application/json"
+    #    },
+    #    "body": json.dumps(config)
+    #}
