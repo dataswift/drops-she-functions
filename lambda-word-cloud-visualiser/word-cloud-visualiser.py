@@ -5,8 +5,11 @@ import base64
 import json
 
 def visualise(event, context):
-    body_data = base64.b64decode(event['body'])
-    decoded_body = json.loads(body_data)['counts']
+    #return event
+    #body_data = base64.b64decode(event['request']['data']['body'])
+    #decoded_body = json.loads(body_data)['counts']
+
+    decoded_body = event['counts']
     frequencies = {d['keyWord']: d['count'] for d in decoded_body}
 
     wordcloud = WordCloud(background_color='white', max_font_size=40, margin=0).generate_from_frequencies(frequencies)
@@ -34,4 +37,9 @@ def visualise(event, context):
         "body": data
     }
 
-    return response
+    #return response
+
+    return {
+        "contentType": "image/png",
+        "data": data
+    }

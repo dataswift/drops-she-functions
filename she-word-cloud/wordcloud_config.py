@@ -2,9 +2,7 @@
 # DROPS project
 #
 # Ming-Wei Hsu
-# 
-import json
-
+#
 def lambda_handler(event, context):
 
     config = {
