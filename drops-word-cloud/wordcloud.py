@@ -68,7 +68,7 @@ def lambda_handler(event, context):
     #}
 
     return [{
-        "namespace": "she",
+        "namespace": "drops",
         "endpoint": "insights/twitter/word-cloud",
         "data": [result],
         "linkedRecords": []

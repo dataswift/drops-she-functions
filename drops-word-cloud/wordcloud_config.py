@@ -33,7 +33,7 @@ def lambda_handler(event, context):
                     }
                 ]
             },
-            "dataPreviewEndpoint": "/she/feed/she/twitter/word-cloud"
+            "dataPreviewEndpoint": "/she/feed/drops/twitter/word-cloud"
         },
         "developer": {
             "id": "drops",
