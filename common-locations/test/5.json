@@ -1,0 +1,83 @@
+{
+  "request": {
+    "data": {
+      "she/insights/common-locations": [
+        {
+          "endpoint": "rumpel/locations/ios",
+          "recordId": "ad0c3ef8-e024-4053-a875-76228b9aa0ea",
+          "data": {
+            "speed": -1,
+            "course": -1,
+            "altitude": 0,
+            "latitude": 51.481863995071002,
+            "longitude": -0.20492033352121,
+            "dateCreated": 1510764709,
+            "dateCreatedLocal": "2017-11-15T16:51:49Z",
+            "verticalAccuracy": -1,
+            "horizontalAccuracy": 5
+          }
+        },
+        {
+          "endpoint": "rumpel/locations/ios",
+          "recordId": "72b2efdb-e83a-467e-9ecd-8f55c70e92ae",
+          "data": {
+            "speed": -1,
+            "course": -1,
+            "altitude": 38.200954437255859,
+            "latitude": 51.534552245767237,
+            "longitude": -0.24963120614939954,
+            "dateCreated": 1510858061,
+            "dateCreatedLocal": "2017-11-16T18:47:41Z",
+            "verticalAccuracy": 10,
+            "horizontalAccuracy": 65
+          }
+        },
+        {
+          "endpoint": "rumpel/locations/ios",
+          "recordId": "87a3a9e5-43e0-45d3-8277-5c5eeeeea1f0",
+          "data": {
+            "speed": -1,
+            "course": -1,
+            "altitude": 35.520805358886719,
+            "latitude": 51.533137449170091,
+            "longitude": -0.24670240735580237,
+            "dateCreated": 1510905686,
+            "dateCreatedLocal": "2017-11-17T08:01:26Z",
+            "verticalAccuracy": 10,
+            "horizontalAccuracy": 65
+          }
+        },
+        {
+          "endpoint": "rumpel/locations/ios",
+          "recordId": "293a789c-6fd0-4a1c-81fe-a6ea848eb4ac",
+          "data": {
+            "speed": -1,
+            "course": -1,
+            "altitude": 34.331279754638672,
+            "latitude": 51.532292102319694,
+            "longitude": -0.24464281525525566,
+            "dateCreated": 1510857663,
+            "dateCreatedLocal": "2017-11-16T18:41:03Z",
+            "verticalAccuracy": 10,
+            "horizontalAccuracy": 65
+          }
+        },
+        {
+          "endpoint": "rumpel/locations/ios",
+          "recordId": "15221aef-6742-4a20-b372-fbea9c475fcd",
+          "data": {
+            "speed": -1,
+            "course": -1,
+            "altitude": 39.302577972412109,
+            "latitude": 51.535086709133942,
+            "longitude": -0.25115611955067846,
+            "dateCreated": 1510905686,
+            "dateCreatedLocal": "2017-11-17T08:01:26Z",
+            "verticalAccuracy": 10,
+            "horizontalAccuracy": 65
+          }
+        }
+      ]
+    }
+  }
+}
