@@ -4,14 +4,11 @@ def lambda_handler(event, context):
 
 
     bundle = {
-        "id": "sentiment_history",
-        "name": "Sentiment History",
         "bundle": {
             "she/insights/emotions": {
                 "endpoints": [
                     {
                         "endpoint": "she/insights/emotions",
-                        "period": "daily",
                         "mapping": {
                             "source": "source", 
                             "timestamp": "timestamp"
@@ -19,18 +16,12 @@ def lambda_handler(event, context):
                     }
                 ],
                 "orderBy": "timestamp",
-                "ordering": "descending"
+                "ordering": "descending",
+				"limit": 100
             }
         }
     
-    };
-
-
-    return json.dumps(bundle);
-    
-    return {
-        'statusCode': 200,
-        
-        'context': context,
-        'body': json.dumps(event)
     }
+
+
+    return bundle   

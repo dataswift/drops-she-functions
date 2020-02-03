@@ -4,7 +4,6 @@
 # Ming-Wei Hsu
 #
 def lambda_handler(event, context):
-    # TODO implement
     
     config = {
         "id": "sentiment-history",
@@ -47,13 +46,11 @@ def lambda_handler(event, context):
             "triggerType": "periodic"
         },
         "dataBundle": {
-            "name": "sentiment-history",
             "bundle": {
                 "she/insights/emotions": {
                 "endpoints": [
                     {
                         "endpoint": "she/insights/emotions",
-                        "period": "daily",
                         "mapping": {
                             "source": "source", 
                             "timestamp": "timestamp"
@@ -61,7 +58,8 @@ def lambda_handler(event, context):
                     }
                 ],
                 "orderBy": "timestamp",
-                "ordering": "descending"
+                "ordering": "descending",
+				"limit": 100
 				}
             }
         },
