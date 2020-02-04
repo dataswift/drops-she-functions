@@ -1,23 +1,27 @@
+import json
+
 def lambda_handler(event, context):
 
+
     bundle = {
-        "name": "sentiment-history",
         "bundle": {
             "she/insights/emotions": {
                 "endpoints": [
                     {
                         "endpoint": "she/insights/emotions",
                         "mapping": {
-                            "id": "id_str"
+                            "source": "source", 
+                            "timestamp": "timestamp"
                         }
                     }
                 ],
                 "orderBy": "timestamp",
                 "ordering": "descending",
-                "limit": 1000
+				"limit": 100
             }
         }
     
     }
 
-    return bundle
+
+    return bundle   
