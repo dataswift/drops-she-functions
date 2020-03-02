@@ -8,13 +8,13 @@ def lambda_handler(event, context):
                     {
                         "endpoint": "calendar/google/events",
                         "mapping": {
-                            "id": "id_str"
+                            "created": "created"
                         }
                     }
                 ],
-                "orderBy": "timestamp",
+                "orderBy": "created",
                 "ordering": "descending",
-                "limit": 1000
+                "limit": 100
             }
         }
     
