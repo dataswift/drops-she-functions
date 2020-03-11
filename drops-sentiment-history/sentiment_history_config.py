@@ -42,7 +42,7 @@ def lambda_handler(event, context):
             "country": "United Kingdom"
         },
         "trigger": {
-            "period": "P1W",
+            "period": "P1D",
             "triggerType": "periodic"
         },
         "dataBundle": {
