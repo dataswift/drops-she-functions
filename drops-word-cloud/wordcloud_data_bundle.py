@@ -10,8 +10,8 @@ def lambda_handler(event, context):
                     {
                         "endpoint": "twitter/tweets",
                         "mapping": {
-                            "message": "text",
-                            "timestamp": "lastUpdated"
+                            "text": "text",
+                            "lastUpdated": "lastUpdated"
                         }
                     }
                 ],
