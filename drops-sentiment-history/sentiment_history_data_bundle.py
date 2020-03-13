@@ -11,7 +11,7 @@ def lambda_handler(event, context):
                         "endpoint": "she/insights/emotions",
                         "mapping": {
                             "source": "source", 
-							"text": "text",
+                            "text": "text",
                             "sentiment": "sentiment",
                             "timestamp": "timestamp"
                         }
