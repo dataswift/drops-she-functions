@@ -8,7 +8,10 @@ def lambda_handler(event, context):
                     {
                         "endpoint": "calendar/google/events",
                         "mapping": {
-                            "created": "created"
+                            "created": "created",
+                            "status": "status",
+                            "start": "start",
+                            "end": "end"
                         }
                     }
                 ],

@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     tweets = event['request']['data']['twitter/tweets']
     for row in tweets:
         if 'data' in row:
-            text += row['data']['message']
+            text += row['data']['text']
     
     words = re.findall(r"\w[\w']+", text, 0)
     
