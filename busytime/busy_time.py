@@ -5,6 +5,11 @@ import uuid
 
 def lambda_handler(event, context):
 
+    print("busy_time handler: start")
+    print("==== event ==== ")
+    print(event)
+    print("==== event ==== ")
+    
     # stats  
     hours           = dict()
     fulldays        = dict()
@@ -26,29 +31,40 @@ def lambda_handler(event, context):
     #insights = event['request']['data']['she/insights/emotions']
     events = event
     
+    print("busy_time handler: iterate the events")
+    
     for row in events:
         if 'data' not in row:
             continue
         
         if row['data']['status'] != 'confirmed':
                 continue
-            
+
+        print("busy_time handler: this event is confirmed")
+                
         record  = row['data']
         fullday = 0
             
         if 'start' in record and 'end' in record and 'status' in record:
+            print("busy_time handler: this event has start, end and status ")
+    
             if 'date' in record['start']:
+                print("busy_time handler: a fullday event")
+    
                 start = datetime.strptime(record['start']['date'], '%Y-%m-%d')
                 end = datetime.strptime(record['end']['date'], '%Y-%m-%d')
                 hour = 8
                 fullday = 1
             elif 'dateTime' in record['start'] and 'dateTime' in record['end']:
+                print("busy_time handler: not a fullday event")
+    
                 start = datetime.strptime(record['start']['dateTime'], '%Y-%m-%dT%H:%M:%S%z')
                 end = datetime.strptime(record['end']['dateTime'], '%Y-%m-%dT%H:%M:%S%z')
                 d1_ts = time.mktime(start.timetuple())
                 d2_ts = time.mktime(end.timetuple())
                 hour = (d2_ts - d1_ts)/3600
             else:
+                print("busy_time handler: unexpected data format, continue to next")    
                 continue
 
             datetag = start.strftime('%Y-%m-%d')
@@ -106,10 +122,13 @@ def lambda_handler(event, context):
             else:
                 weekendevents   += 1
                 weekendhours    += hour 
-            
+            print("busy_time handler: finish this event, move on to next")    
+                
     if enddate > datetime.now():
         enddate = datetime.now()
 
+    print("busy_time handler: done iterating the events, analyzing total hours")
+    
     period = (enddate - startdate).days
     busypercent = 100 * len(hours) / period 
     busydaytimepercent = 100 * len(busyday) / period 
