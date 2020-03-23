@@ -9,7 +9,13 @@ import re
 from collections import Counter
 
 def lambda_handler(event, context):
-    # TODO implement
+
+    print("word-cloud handler: start, dev version: 200323")
+	
+    print("==== event ==== ")
+    print(event)
+    print("==== event ==== ")
+	
     text = ''
     #return event[1]['data']['tweets']['text'] 
 

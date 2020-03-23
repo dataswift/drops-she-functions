@@ -8,6 +8,11 @@ def lambda_handler(event, context):
     #date = datetime.strptime(t, '%Y-%m-%dT%H:%M:%S.%fZ')
     #return date.isoformat() 
     
+    print("sentiment-history handler: start, dev version: 200323")
+	
+    print("==== event ==== ")
+    print(event)
+    print("==== event ==== ")
     # sentiment of all sources and periods, length-weighted average 
     st = dict()
     textlen = dict() 
@@ -49,7 +54,9 @@ def lambda_handler(event, context):
     total = 0
     for source in st:
         total += len(source)
-        
+    
+    print("sentiment-history handler: done iterating the records")
+
     result = {
         "id": "sentiment-history",
         "name": "Sentiment History",
