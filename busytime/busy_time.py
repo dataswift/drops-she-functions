@@ -5,7 +5,7 @@ import uuid
 
 def lambda_handler(event, context):
 
-    print("busy_time handler: start")
+    print("busy_time handler: start, dev version: 200323")
     print("==== event ==== ")
     print(event)
     print("==== event ==== ")
@@ -29,7 +29,7 @@ def lambda_handler(event, context):
     startdate   = datetime(3000, 1, 1)
     
     #insights = event['request']['data']['she/insights/emotions']
-    events = event
+    events = event['request']['data']['calendar/google/events']
     
     print("busy_time handler: iterate the events")
     
