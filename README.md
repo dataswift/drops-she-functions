@@ -4,7 +4,7 @@ SHE Tools by DROPS
 Introduction
 ------------
 
-This repository contains several SHE functions developed under the auspices of the £1.1m [EPSRC DROPS](https://www.hat-lab.org/programs/2018/7/26/drops-project) project.
+This repository contains several SHE functions developed under the auspices of the £1.1m [EPSRC DROPS](https://www.hat-lab.org/programs/2018/7/26/drops-project) project. It was [announced](https://www.linkedin.com/pulse/algorithms-hack-from-home-glenn-parry/?trackingId=2C857eB4TT6JupWvOKV98g%3D%3D) as a contribution to the [Hack from Home](https://hackfromhome.com) project on 1st April 2020.
 
 Attribution
 ------------
