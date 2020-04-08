@@ -5,6 +5,7 @@ def lambda_handler(event, context):
 
     bundle = {
         "bundle": {
+            "name": "sentiment-history",
             "she/insights/emotions": {
                 "endpoints": [
                     {
