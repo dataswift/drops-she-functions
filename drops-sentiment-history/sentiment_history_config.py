@@ -46,7 +46,6 @@ def lambda_handler(event, context):
             "triggerType": "periodic"
         },
         "dataBundle": {
-            "name": "sentiment-history",
             "bundle": {
                 "she/insights/emotions": {
                 "endpoints": [
