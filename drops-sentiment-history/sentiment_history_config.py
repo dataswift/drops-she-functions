@@ -47,6 +47,7 @@ def lambda_handler(event, context):
         },
         "dataBundle": {
             "bundle": {
+            "name": "sentiment-history",
                 "she/insights/emotions": {
                 "endpoints": [
                     {
