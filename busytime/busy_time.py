@@ -188,11 +188,11 @@ def lambda_handler(event, context):
 
     result["data"] = allhourdata
 
-    return [{
+    return {
         "namespace": "drops",
         "endpoint": "insights/busy-time",
-        "data": [result],
+        "data": result,
         "linkedRecords": []
-    }]
+    }
 
 
