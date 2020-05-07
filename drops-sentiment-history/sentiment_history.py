@@ -76,5 +76,6 @@ def lambda_handler(event, context):
         "namespace": "drops",
         "endpoint": "insights/sentiment-history",
         "data": [result],
+        "timestamp": datetime.utcnow().isoformat(),
         "linkedRecords": []
     }]
