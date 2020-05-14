@@ -192,6 +192,7 @@ def lambda_handler(event, context):
         "namespace": "drops",
         "endpoint": "insights/busy-time",
         "data": [result],
+        "timestamp": datetime.utcnow().isoformat(),
         "linkedRecords": []
     }]
 
