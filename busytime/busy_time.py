@@ -183,6 +183,7 @@ def lambda_handler(event, context):
             "endDate": enddate.strftime('%Y-%m-%d'),        
             "totalDays": period
         },
+        "timestamp": datetime.utcnow().isoformat(),
         "data": []
     }
 
@@ -192,7 +193,6 @@ def lambda_handler(event, context):
         "namespace": "drops",
         "endpoint": "insights/busy-time",
         "data": [result],
-        "timestamp": datetime.utcnow().isoformat(),
         "linkedRecords": []
     }]
 
